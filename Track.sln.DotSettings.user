@@ -1,0 +1,13 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=C_003A_005Cprograms_005Copentk_005Cbin_005COpenTK_002EGraphics_005COpenTK_002ECore_002Edll/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=C_003A_005Cprograms_005Copentk_005Cbin_005COpenTK_002EGraphics_005COpenTK_002EGraphics_002Edll/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=C_003A_005Cprograms_005Copentk_005Cbin_005COpenTK_002EGraphics_005COpenTK_002EMathematics_002Edll/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=C_003A_005Cprograms_005Copentk_005Csrc_005COpenTK_002EGraphics_005Cbin_005CRelease_005Cnet5_002E0_005COpenTK_002EGraphics_002Edll/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=C_003A_005Cprograms_005CTrack_005CTools_005Cfxc_005CDependencies_005CCppNet_002Edll/@EntryIndexedValue">True</s:Boolean>
+	<s:String x:Key="/Default/Environment/AssemblyExplorer/XmlDocument/@EntryValue">&lt;AssemblyExplorer&gt;&#xD;
+  &lt;Assembly Path="C:\programs\Track\Ballast\bin\Debug\net6.0\Ballast.dll" /&gt;&#xD;
+  &lt;Assembly Path="C:\Users\robot\.nuget\packages\opentk.core\5.0.0-pre.6\lib\net5.0\OpenTK.Core.dll" /&gt;&#xD;
+  &lt;Assembly Path="C:\programs\opentk\bin\OpenTK.Graphics\OpenTK.Graphics.dll" /&gt;&#xD;
+  &lt;Assembly Path="C:\Users\robot\.nuget\packages\microsoft.extensions.fileproviders.abstractions\6.0.2-mauipre.1.22054.8\lib\net6.0\Microsoft.Extensions.FileProviders.Abstractions.dll" /&gt;&#xD;
+  &lt;Assembly Path="C:\Users\robot\.nuget\packages\microsoft.extensions.primitives\6.0.2-mauipre.1.22054.8\lib\net6.0\Microsoft.Extensions.Primitives.dll" /&gt;&#xD;
+&lt;/AssemblyExplorer&gt;</s:String></wpf:ResourceDictionary>
