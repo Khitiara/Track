@@ -1,4 +1,4 @@
-﻿namespace Track.Ties;
+﻿namespace Track.Ballast;
 
 public class GameHostOptions
 {

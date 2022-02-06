@@ -1,6 +1,6 @@
 using System.Runtime.CompilerServices;
 
-namespace Track.Ties.Threading;
+namespace Track.Ballast.Threading;
 
 public sealed partial class CoroutineManager
 {

@@ -1,6 +1,6 @@
 ﻿using System.Runtime.InteropServices;
 
-namespace Track.Ties.Threading;
+namespace Track.Ballast.Threading;
 
 public sealed partial class CoroutineManager : SynchronizationContext
 {

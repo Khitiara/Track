@@ -2,11 +2,11 @@
 using Microsoft.Extensions.Options;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Track.Ties.Threading;
+using Track.Ballast.Threading;
 
-namespace Track.Ties;
+namespace Track.Ballast;
 
-internal class GameHostImpl : Game
+internal class GameHostImpl : Game, IGameLifetime
 {
     private readonly IServiceScopeFactory _scopeFactory;
     private          IGame?               _game;
@@ -28,6 +28,7 @@ internal class GameHostImpl : Game
             PreferredDepthStencilFormat = DepthFormat.Depth24Stencil8
         };
         GraphicsDeviceManager.DeviceReset += OnGraphicsDeviceReset;
+        Content.RootDirectory = "Content";
         Exiting += DisposeScope;
     }
 
@@ -44,6 +45,8 @@ internal class GameHostImpl : Game
         _scope = _scopeFactory.CreateScope();
         _game = _scope.ServiceProvider.GetRequiredService<IGame>();
         _coroutineManager.Initialize();
+        _game.Initialize();
+        _game.LoadContent();
     }
 
     protected override void Update(GameTime gameTime) {

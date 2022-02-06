@@ -1,9 +1,10 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using System.Diagnostics.CodeAnalysis;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace Track.Ties;
+namespace Track.Ballast;
 
 public class GameHostBuilder
 {
@@ -12,6 +13,7 @@ public class GameHostBuilder
         Services.AddOptions()
             .AddSingleton<Time>()
             .AddSingleton<GameHostImpl>()
+            .AddSingleton<IGameLifetime>(s => s.GetRequiredService<GameHostImpl>())
             .AddScoped<IGraphicsDeviceManager>(s => s.GetRequiredService<GameHostImpl>().GraphicsDeviceManager)
             .AddScoped<IGraphicsDeviceService>(s => s.GetRequiredService<GameHostImpl>().GraphicsDeviceManager)
             .AddScoped<ContentManager>(s => s.GetRequiredService<GameHostImpl>().Content);
@@ -19,9 +21,14 @@ public class GameHostBuilder
         return this;
     }
 
-    public GameHostBuilder WithGame<T>()
+    public GameHostBuilder WithGame<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)] T>()
         where T : class, IGame {
         Services.AddScoped<IGame, T>();
+        return this;
+    }
+
+    public GameHostBuilder ConfigureServices(Action<GameHostBuilder, ServiceCollection> configure) {
+        configure(this, Services);
         return this;
     }
 

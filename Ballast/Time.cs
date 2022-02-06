@@ -1,6 +1,6 @@
 ﻿using System.Runtime.CompilerServices;
 
-namespace Track.Ties;
+namespace Track.Ballast;
 
 /// <summary>
 /// provides frame timing information
