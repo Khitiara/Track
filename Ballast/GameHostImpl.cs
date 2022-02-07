@@ -6,7 +6,7 @@ using Track.Ballast.Threading;
 
 namespace Track.Ballast;
 
-internal class GameHostImpl : Game, IGameLifetime
+internal class GameHostImpl : Game, IGameLifetime, IGameWindowHolder
 {
     private readonly IServiceScopeFactory _scopeFactory;
     private          IGame?               _game;
@@ -60,5 +60,9 @@ internal class GameHostImpl : Game, IGameLifetime
     protected override void Draw(GameTime gameTime) {
         base.Draw(gameTime);
         _game!.Draw();
+    }
+
+    protected override void UnloadContent() {
+        _game!.UnloadContent();
     }
 }

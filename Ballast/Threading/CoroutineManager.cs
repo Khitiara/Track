@@ -9,7 +9,7 @@ public sealed partial class CoroutineManager : SynchronizationContext
     private class CoroutineTaskScheduler : TaskScheduler
     {
         private readonly CoroutineManager   _manager;
-        private          SendOrPostCallback _callback;
+        private readonly SendOrPostCallback _callback;
 
         private void SPostCallback(object? s) {
             if (s is Task task)
@@ -24,8 +24,7 @@ public sealed partial class CoroutineManager : SynchronizationContext
         protected override IEnumerable<Task>? GetScheduledTasks() {
             return null;
         }
-        
-        
+
 
         protected override void QueueTask(Task task) {
             _manager.Post(_callback, task);

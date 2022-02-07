@@ -75,8 +75,7 @@ public sealed class Time
     /// otherwise it will always return true.
     /// </summary>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public bool CheckEvery(float interval) {
+    public bool CheckEvery(float interval) =>
         // we subtract deltaTime since timeSinceSceneLoad already includes this update ticks deltaTime
-        return (int)(TimeSinceSceneLoad / interval) > (int)((TimeSinceSceneLoad - DeltaTime) / interval);
-    }
+        (int)(TimeSinceSceneLoad / interval) > (int)((TimeSinceSceneLoad - DeltaTime) / interval);
 }

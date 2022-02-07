@@ -9,11 +9,13 @@ namespace Track.Ballast;
 public class GameHostBuilder
 {
     public ServiceCollection Services { get; } = new();
+
     public GameHostBuilder ConfigureGameDefaults() {
         Services.AddOptions()
             .AddSingleton<Time>()
             .AddSingleton<GameHostImpl>()
             .AddSingleton<IGameLifetime>(s => s.GetRequiredService<GameHostImpl>())
+            .AddScoped<IGameWindowHolder>(s => s.GetRequiredService<GameHostImpl>())
             .AddScoped<IGraphicsDeviceManager>(s => s.GetRequiredService<GameHostImpl>().GraphicsDeviceManager)
             .AddScoped<IGraphicsDeviceService>(s => s.GetRequiredService<GameHostImpl>().GraphicsDeviceManager)
             .AddScoped<ContentManager>(s => s.GetRequiredService<GameHostImpl>().Content);
@@ -46,6 +48,7 @@ public sealed class GameHost : IDisposable
         _impl = services.GetRequiredService<GameHostImpl>();
         Services = services;
     }
+
     public ServiceProvider Services { get; }
     private readonly GameHostImpl _impl;
 
